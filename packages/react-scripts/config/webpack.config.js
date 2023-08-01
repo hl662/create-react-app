@@ -160,7 +160,7 @@ module.exports = function (webpackEnv) {
         noErrorOnMissing: true,
         context: path.dirname(require.resolve(`${paths.appNodeModules}/${dependency}/package.json`)),
         globOptions: isUsingNpm ? undefined : {
-          ignore: ["**/node_modules/**"],
+          ignore: ["/node_modules/**"],
         },
         to({ absoluteFilename }) {
           const regex = new RegExp("(public(?:\\\\|\/))(.*)");
